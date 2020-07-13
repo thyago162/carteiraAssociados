@@ -7,9 +7,11 @@ import {
     TouchableOpacity,
     Dimensions,
     ImageBackground,
-    StyleSheet
+    StyleSheet,
+    Alert
 } from 'react-native';
 import Orientation from 'react-native-orientation-locker';
+import axios from 'axios';
 
 export default class Login extends Component {
 
@@ -20,7 +22,7 @@ export default class Login extends Component {
             matricula: '',
             cpf: '',
             token: '',
-            screenHeight: ""
+            token: ''
         }
 
     }
@@ -31,8 +33,27 @@ export default class Login extends Component {
     }
 
     login = () => {
+        axios.post('http://193.46.198.137:8000/api/login')
+            .then(res => {
+                if (res.status === 200) {
+                    if (res.data.response.token) {
 
-        this.props.navigation.navigate('Home')
+                        this.setState({ token: res.data.response.token })
+                        this.props.navigation.navigate('Home')
+                    }
+
+                    let response = res.data.response.error
+                    return <Alert>
+                        <Text>Código: {response.code}</Text>
+                        <Text>Mensagem: {response.error}</Text>
+                    </Alert>
+
+                }
+            })
+            .catch(err => {
+                return <Alert>{err}</Alert>
+            })
+
     }
 
     getScreenSize = () => {
