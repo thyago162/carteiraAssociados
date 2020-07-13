@@ -1,30 +1,43 @@
 import React, { Component } from 'react';
-import { 
-    TextInput, 
-    Image, 
-    View, 
-    Text, 
-    TouchableOpacity, 
-    Dimensions, 
-    ImageBackground, 
+import {
+    TextInput,
+    Image,
+    View,
+    Text,
+    TouchableOpacity,
+    Dimensions,
+    ImageBackground,
     StyleSheet
 } from 'react-native';
 import Orientation from 'react-native-orientation-locker';
 
-const windowHeight = Dimensions.get('window').height
-
 export default class Login extends Component {
 
-    state = {
-        matricula: '',
-        cpf: '',
-        token: ''
+    constructor() {
+        super();
+
+        this.state = {
+            matricula: '',
+            cpf: '',
+            token: '',
+            screenHeight: ""
+        }
+
     }
 
+
+    componentDidMount() {
+        this.getScreenSize();
+    }
 
     login = () => {
 
         this.props.navigation.navigate('Home')
+    }
+
+    getScreenSize = () => {
+        const screenHeight = Math.round(Dimensions.get('window').height)
+        this.setState({ screenHeight: screenHeight })
     }
 
     render() {
@@ -58,8 +71,6 @@ export default class Login extends Component {
                         <TouchableOpacity>
                             <Text style={styles.link}>Esqueceu a senha?</Text>
                         </TouchableOpacity>
-
-
                     </View>
 
 
@@ -76,7 +87,6 @@ const styles = StyleSheet.create({
 
     background: {
         width: '100%',
-        height: windowHeight,
         resizeMode: 'cover',
         flexDirection: 'column',
         justifyContent: 'space-evenly',

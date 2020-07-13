@@ -72,7 +72,6 @@ const styles = StyleSheet.create({
     },
     background: {
         width: '100%',
-        height: windowHeight,
         resizeMode: 'cover',
         flexDirection: 'column',
         justifyContent: 'space-between',

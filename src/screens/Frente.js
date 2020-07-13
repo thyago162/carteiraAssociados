@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
 
     background: {
         width: '100%',
-        height: windowHeight,
         flexDirection: 'column',
         justifyContent: 'space-around',
         flex: 1
