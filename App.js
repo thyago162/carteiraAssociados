@@ -1,5 +1,4 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -7,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from './src/screens/Login';
 import Frente from './src/screens/Frente';
 import Verso from './src/screens/Verso';
+import Sair from './src/screens/Logout';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const Tab = createBottomTabNavigator();
@@ -44,7 +44,7 @@ export default function App() {
           >
             <Tab.Screen name="Frente" component={Frente} />
             <Tab.Screen name="Verso" component={Verso} />
-            <Tab.Screen name="Sair" component={Login} />
+            <Tab.Screen name="Sair" component={Sair} />
           </Tab.Navigator>
 
           )}

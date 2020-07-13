@@ -11,7 +11,6 @@ export default class Frente extends Component {
     }
 
     state = {
-        rotationLock: ''
     }
 
     _onOrientationDidChange = (orientation) => {
@@ -42,7 +41,7 @@ export default class Frente extends Component {
 
                     <View style={styles.name}>
                         <Text style={styles.title}>Associado</Text>
-                        <Text style={styles.subtitle}>Thyago L Brasileiro</Text>
+                        <Text style={styles.subtitle}>John Doe</Text>
                     </View>
                     <View style={styles.other}>
                         <View>
@@ -51,11 +50,11 @@ export default class Frente extends Component {
                         </View>
                         <View>
                             <Text style={styles.title}>CPF</Text>
-                            <Text style={styles.subtitle}>059.281.834-96</Text>
+                            <Text style={styles.subtitle}>011.231.734-24</Text>
                         </View>
                         <View>
                             <Text style={styles.title}>Aniversário</Text>
-                            <Text style={styles.subtitle}>16/02/1984</Text>
+                            <Text style={styles.subtitle}>20/06/1980</Text>
                         </View>
                     </View>
 
@@ -73,7 +72,6 @@ const styles = StyleSheet.create({
     background: {
         width: '100%',
         height: windowHeight,
-        resizeMode: 'cover',
         flexDirection: 'column',
         justifyContent: 'space-around',
         flex: 1

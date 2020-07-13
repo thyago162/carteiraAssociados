@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
-import { TextInput, Image, View, Text, TouchableOpacity, Dimensions, ImageBackground, StyleSheet } from 'react-native';
+import { 
+    TextInput, 
+    Image, 
+    View, 
+    Text, 
+    TouchableOpacity, 
+    Dimensions, 
+    ImageBackground, 
+    StyleSheet
+} from 'react-native';
+import Orientation from 'react-native-orientation-locker';
 
 const windowHeight = Dimensions.get('window').height
 
 export default class Login extends Component {
 
     state = {
-        email: '',
-        password: '',
+        matricula: '',
+        cpf: '',
         token: ''
     }
 
+
     login = () => {
+
         this.props.navigation.navigate('Home')
     }
 
@@ -24,22 +36,30 @@ export default class Login extends Component {
                         <TextInput
                             placeholderTextColor="#fff"
                             style={styles.input}
-                            placeholder='Email'
-                            keyboardType="email-address"
-                            value={this.state.email}
-                            onChangeText={email => this.setState({ email })} />
+                            placeholder='Matrícula'
+                            keyboardType="numeric"
+                            value={this.state.matricula}
+                            onChangeText={matricula => this.setState({ matricula })} />
 
                         <TextInput
                             placeholderTextColor="#fff"
                             style={styles.input}
-                            placeholder='Senha'
-                            secureTextEntry={true}
-                            value={this.state.password}
-                            onChangeText={password => this.setState({ password })} />
+                            placeholder='CPF'
+                            keyboardType="numeric"
+                            value={this.state.cpf}
+                            onChangeText={cpf => this.setState({ cpf })} />
 
                         <TouchableOpacity style={styles.button} onPress={this.login}>
                             <Text style={styles.buttonText}>Entrar</Text>
                         </TouchableOpacity>
+                    </View>
+
+                    <View>
+                        <TouchableOpacity>
+                            <Text style={styles.link}>Esqueceu a senha?</Text>
+                        </TouchableOpacity>
+
+
                     </View>
 
 
@@ -93,6 +113,9 @@ const styles = StyleSheet.create({
         color: 'rgb(189,22,34)',
         fontWeight: 'bold',
         fontSize: 20
+    },
 
+    link: {
+        color: '#ffffff'
     }
 })
