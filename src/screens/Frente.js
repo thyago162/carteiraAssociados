@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ImageBackground, Image } from 'react-native';
 import { connect } from 'react-redux';
-import { getMembership } from '../store/actions/membership'
+import { getMembership } from '../store/actions/membership';
 import Orientation from 'react-native-orientation-locker';
 
 class Frente extends Component {
@@ -16,6 +16,7 @@ class Frente extends Component {
         Orientation.lockToLandscapeLeft();
         Orientation.addOrientationListener(this._onOrientationDidChange);
         this.associated();
+        console.log(this.props)
     }
 
     componentWillUnmount() {
@@ -24,10 +25,7 @@ class Frente extends Component {
     }
 
     associated = () => {
-        this.props.getMembershipData({
-            email: this.props.email,
-            token: this.props.token
-        })
+        this.props.getMembershipData()
     }
 
     render() {
@@ -65,13 +63,17 @@ class Frente extends Component {
 const mapStateToProps = ({ user }) => {
     return {
         email: user.email,
-        token: user.token
+        token: user.token,
+        nome: user.nome,
+        cpf: user.cpf,
+        filiacao: user.filiacao,
+        nascimento: user.nascimento
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        getMembershipData: membership => dispatch(getMembership(membership))
+        getMembershipData: () => dispatch(getMembership())
     }
 }
 

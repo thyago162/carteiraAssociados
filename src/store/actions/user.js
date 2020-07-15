@@ -2,7 +2,8 @@ import {
     USER_LOGGED_IN, 
     USER_LOGGED_OUT, 
     LOADING_USER, 
-    USER_LOADED } 
+    USER_LOADED, 
+    MEMBERSHIP_DATA} 
 from './actionTypes'
 import axios from 'axios'
 
@@ -16,11 +17,34 @@ export const login = user => {
             password: user.password
         })
             .then(res => {
-                if (res.data.response.token) {
-                    user.password = null
-                    user.token = res.data.response.token
-                    dispatch(userLogged(user))
-                    dispatch(userLoaded())
+                if (res.status === 200) {
+                    if (res.data.response.token) {
+                        user.password = null
+                        user.token = res.data.response.token
+    
+                        axios.post(`${baseURL}/membership`,{
+                            email: user.email
+                        },
+                        {
+                            headers: {
+                                Authorization: 'Bearer '+user.token
+                            }
+                        })
+                        .then(res => {
+                            if (res.status === 200) {
+                                if (res.data.result.membersip) {
+                                    user.nome = res.data.result.membersip.nm_name
+                                    user.cpf = res.data.result.membersip.nm_cpf
+                                    user.filiacao = res.data.result.membersip.created_at
+                                    user.nascimento = res.data.result.membersip.dt_birthday
+
+                                    dispatch(userLogged(user))
+                                    dispatch(userLoaded())
+                                }
+                            }
+                        })
+                       
+                    }
                 }
             })
             .catch(err => console.log(err))
