@@ -6,6 +6,12 @@ import Orientation from 'react-native-orientation-locker';
 
 class Frente extends Component {
 
+    state = {
+        cpf: null,
+        filiacao: null,
+        nascimento: null
+    }
+
     _onOrientationDidChange = (orientation) => {
         if (orientation == 'PORTRAIT') {
             Orientation.lockToLandscapeLeft();
@@ -16,7 +22,9 @@ class Frente extends Component {
         Orientation.lockToLandscapeLeft();
         Orientation.addOrientationListener(this._onOrientationDidChange);
         this.associated();
-        console.log(this.props)
+        this.cpfMask(this.props.cpf)
+        this.normalDateMask(this.props.nascimento)
+        this.fullDateMask(this.props.filiacao)
     }
 
     componentWillUnmount() {
@@ -26,6 +34,42 @@ class Frente extends Component {
 
     associated = () => {
         this.props.getMembershipData()
+    }
+
+    cpfMask = param => {
+        if (param) {
+            let cpf = param.split("")
+            for (let index =0; index < cpf.length; index++) {
+                if (index == 2 || index == 5) {
+                    cpf[index] += '.'
+                 }
+         
+                 if (index == 8) {
+                     cpf[index] += '-'
+                 }
+            }
+
+            this.setState({cpf: cpf.join('')})
+
+        }
+
+    }
+
+    normalDateMask = param => {
+        if (param) {
+            let date = param.split('-').reverse().join('/')
+            this.setState({nascimento: date})
+        }
+    }
+
+    fullDateMask = param => {
+        if (param) {
+            let fullDate = param.split(' ')
+            let date = fullDate[0].split('-').reverse().join('/')
+
+            this.setState({filiacao: date})
+        }
+
     }
 
     render() {
@@ -42,15 +86,15 @@ class Frente extends Component {
                     <View style={styles.other}>
                         <View>
                             <Text style={styles.title}>Filiação</Text>
-                            <Text style={styles.subtitle}>{this.props.filiacao}</Text>
+                            <Text style={styles.subtitle}>{this.state.filiacao}</Text>
                         </View>
                         <View>
                             <Text style={styles.title}>CPF</Text>
-                            <Text style={styles.subtitle}>{this.props.cpf}</Text>
+                            <Text style={styles.subtitle}>{this.state.cpf}</Text>
                         </View>
                         <View>
                             <Text style={styles.title}>Data de Nascimento</Text>
-                            <Text style={styles.subtitle}>{this.props.nascimento}</Text>
+                            <Text style={styles.subtitle}>{this.state.nascimento}</Text>
                         </View>
                     </View>
 
