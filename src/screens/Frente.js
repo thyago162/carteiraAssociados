@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Dimensions, ImageBackground, Image } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, Image } from 'react-native';
+import { connect } from 'react-redux';
+import { getMembership } from '../store/actions/membership'
 import Orientation from 'react-native-orientation-locker';
 
-const windowHeight = Dimensions.get('window').height
-
-export default class Frente extends Component {
-
-    constructor(props) {
-        super(props)
-    }
-
-    state = {
-    }
+class Frente extends Component {
 
     _onOrientationDidChange = (orientation) => {
         if (orientation == 'PORTRAIT') {
@@ -22,6 +15,7 @@ export default class Frente extends Component {
     componentDidMount() {
         Orientation.lockToLandscapeLeft();
         Orientation.addOrientationListener(this._onOrientationDidChange);
+        this.associated();
     }
 
     componentWillUnmount() {
@@ -30,10 +24,14 @@ export default class Frente extends Component {
     }
 
     associated = () => {
-
+        this.props.getMembershipData({
+            email: this.props.email,
+            token: this.props.token
+        })
     }
 
     render() {
+       
         return (
             <View style={styles.container}>
                 <ImageBackground style={styles.background} source={require("../../assets/images/frente.jpeg")}>
@@ -41,20 +39,20 @@ export default class Frente extends Component {
 
                     <View style={styles.name}>
                         <Text style={styles.title}>Associado</Text>
-                        <Text style={styles.subtitle}>John Doe</Text>
+                        <Text style={styles.subtitle}>{this.props.nome}</Text>
                     </View>
                     <View style={styles.other}>
                         <View>
                             <Text style={styles.title}>Filiação</Text>
-                            <Text style={styles.subtitle}>01/06/2020</Text>
+                            <Text style={styles.subtitle}>{this.props.filiacao}</Text>
                         </View>
                         <View>
                             <Text style={styles.title}>CPF</Text>
-                            <Text style={styles.subtitle}>011.231.734-24</Text>
+                            <Text style={styles.subtitle}>{this.props.cpf}</Text>
                         </View>
                         <View>
-                            <Text style={styles.title}>Aniversário</Text>
-                            <Text style={styles.subtitle}>20/06/1980</Text>
+                            <Text style={styles.title}>Data de Nascimento</Text>
+                            <Text style={styles.subtitle}>{this.props.nascimento}</Text>
                         </View>
                     </View>
 
@@ -63,6 +61,21 @@ export default class Frente extends Component {
         )
     }
 }
+
+const mapStateToProps = ({ user }) => {
+    return {
+        email: user.email,
+        token: user.token
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        getMembershipData: membership => dispatch(getMembership(membership))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Frente)
 
 const styles = StyleSheet.create({
     container: {

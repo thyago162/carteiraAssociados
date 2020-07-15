@@ -5,60 +5,37 @@ import {
     View,
     Text,
     TouchableOpacity,
-    Dimensions,
     ImageBackground,
     StyleSheet,
-    Alert
 } from 'react-native';
-import Orientation from 'react-native-orientation-locker';
 import axios from 'axios';
+import { connect } from 'react-redux'
+import { login } from '../store/actions/user';
 
-export default class Login extends Component {
+ class Login extends Component {
 
     constructor() {
         super();
 
         this.state = {
-            matricula: '',
-            cpf: '',
-            token: '',
-            token: ''
+            email: '',
+            password: '',
+            token: 'token'
         }
 
     }
 
-
-    componentDidMount() {
-        this.getScreenSize();
+    componentDidUpdate = prevProps => {
+        if (prevProps.isLoading && ! this.props.isLoading) {
+            this.props.navigation.navigate('Home')
+        }
     }
 
     login = () => {
-        axios.post('http://193.46.198.137:8000/api/login')
-            .then(res => {
-                if (res.status === 200) {
-                    if (res.data.response.token) {
+        this.props.onLogin({ ...this.state })
+        this.props.navigation.navigate('Home')
+        
 
-                        this.setState({ token: res.data.response.token })
-                        this.props.navigation.navigate('Home')
-                    }
-
-                    let response = res.data.response.error
-                    return <Alert>
-                        <Text>Código: {response.code}</Text>
-                        <Text>Mensagem: {response.error}</Text>
-                    </Alert>
-
-                }
-            })
-            .catch(err => {
-                return <Alert>{err}</Alert>
-            })
-
-    }
-
-    getScreenSize = () => {
-        const screenHeight = Math.round(Dimensions.get('window').height)
-        this.setState({ screenHeight: screenHeight })
     }
 
     render() {
@@ -70,18 +47,19 @@ export default class Login extends Component {
                         <TextInput
                             placeholderTextColor="#fff"
                             style={styles.input}
-                            placeholder='Matrícula'
-                            keyboardType="numeric"
-                            value={this.state.matricula}
-                            onChangeText={matricula => this.setState({ matricula })} />
+                            placeholder='Email'
+                            keyboardType="email-address"
+                            value={this.state.email}
+                            onChangeText={email => this.setState({ email })} />
 
                         <TextInput
                             placeholderTextColor="#fff"
                             style={styles.input}
-                            placeholder='CPF'
-                            keyboardType="numeric"
-                            value={this.state.cpf}
-                            onChangeText={cpf => this.setState({ cpf })} />
+                            placeholder='Senha'
+                            keyboardType="default"
+                            secureTextEntry={true}
+                            value={this.state.password}
+                            onChangeText={password => this.setState({ password })} />
 
                         <TouchableOpacity style={styles.button} onPress={this.login}>
                             <Text style={styles.buttonText}>Entrar</Text>
@@ -100,6 +78,20 @@ export default class Login extends Component {
         )
     }
 }
+
+const mapStateToProps = ({ user }) => {
+   return {
+       isLoading: user.isLoading
+   } 
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+      onLogin: user => dispatch(login(user))
+    }
+  }
+  
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
 
 const styles = StyleSheet.create({
     container: {
@@ -127,7 +119,8 @@ const styles = StyleSheet.create({
     input: {
         borderBottomWidth: 1,
         borderColor: '#fff',
-        padding: 10
+        padding: 10,
+        color: "#fff"
     },
 
     button: {

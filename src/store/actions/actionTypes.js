@@ -1,0 +1,5 @@
+export const USER_LOGGED_IN = 'USER_LOGGED_IN'
+export const USER_LOGGED_OUT = 'USER_LOGEED_OUT'
+export const MEMBERSHIP_DATA = 'MEMBERSHIP_DATA'
+export const LOADING_USER = 'LOADING_USER'
+export const USER_LOADED = 'USER_LOADED'

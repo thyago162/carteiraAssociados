@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { logout } from '../store/actions/user'
 
-export default class Logout extends Component {
+class Logout extends Component {
     constructor(props) {
         super(props)
+
+        this.state = {}
     }
 
     componentWillMount() {
@@ -17,3 +21,11 @@ export default class Logout extends Component {
         return null
     }
 }
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onLogout: () => dispatch(logou())
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Logout)
