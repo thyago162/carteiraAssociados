@@ -33,9 +33,6 @@ import { login } from '../store/actions/user';
 
     login = () => {
         this.props.onLogin({ ...this.state })
-        this.props.navigation.navigate('Home')
-        
-
     }
 
     render() {

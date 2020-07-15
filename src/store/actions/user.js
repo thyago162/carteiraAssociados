@@ -41,13 +41,27 @@ export const login = user => {
                                     dispatch(userLogged(user))
                                     dispatch(userLoaded())
                                 }
+                                else {
+                                    alert(res.data.result.error)
+                                }
+                            }
+                            else {
+                                alert(res.data.result.error)
                             }
                         })
                        
+                    }else {
+                        alert(res.data.response.error)
                     }
+                   
+                }else {
+                    alert(res.data.response.error)
                 }
+                
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                alert(err)
+            })
 
 
     }
