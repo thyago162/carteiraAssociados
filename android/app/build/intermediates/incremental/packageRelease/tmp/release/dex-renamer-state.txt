@@ -1,0 +1,4 @@
+#Thu Jul 16 21:55:24 BRT 2020
+base.0=/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/dex/release/mergeDexRelease/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

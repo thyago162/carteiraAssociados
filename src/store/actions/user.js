@@ -7,7 +7,7 @@ import {
 from './actionTypes'
 import axios from 'axios'
 
-const baseURL = 'http://192.168.122.219/api'
+const baseURL = 'http://193.46.198.137:8000/api'
 
 export const login = user => {
     return dispatch => {
