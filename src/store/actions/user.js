@@ -6,6 +6,7 @@ import {
     MEMBERSHIP_DATA} 
 from './actionTypes'
 import axios from 'axios'
+import { setMessage } from './message'
 
 const baseURL = 'http://193.46.198.137:8000/api'
 
@@ -32,7 +33,7 @@ export const login = user => {
                         })
                         .then(res => {
                             if (res.status === 200) {
-                                if (res.data.result.membersip) {
+                                if (res.data.result.membersip){
                                     user.nome = res.data.result.membersip.nm_name
                                     user.cpf = res.data.result.membersip.nm_cpf
                                     user.filiacao = res.data.result.membersip.created_at
@@ -42,25 +43,37 @@ export const login = user => {
                                     dispatch(userLoaded())
                                 }
                                 else {
-                                    alert(res.data.result.error)
+                                    dispatch(setMessage({
+                                        title: 'Erro',
+                                        text: 'O e-mail informado não consta em nossa base de dados.'
+                                    }))
                                 }
                             }
-                            else {
-                                alert(res.data.result.error)
-                            }
+                            
                         })
                        
                     }else {
-                        alert(res.data.response.error)
+                        dispatch(setMessage({
+                            title: 'Erro',
+                            text: res.data.response.error
+                        }))
                     }
                    
                 }else {
-                    alert(res.data.response.error)
+                    dispatch(setMessage({
+                        title: 'Erro',
+                        text: 'Não foi possível se comunicar com o servidor,'+
+                        'por favor, tente novamente mais tarde'
+                    }))
                 }
                 
             })
             .catch(err => {
-                alert(err)
+                dispatch(setMessage({
+                    title: 'Erro',
+                    text: 'Não foi possível se comunicar com o servidor, '+
+                    'verifique sua conexão com a internet ou tente novamente mais tarde'
+                }))
             })
 
 

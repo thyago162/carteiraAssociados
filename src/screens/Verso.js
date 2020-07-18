@@ -43,16 +43,9 @@ export default class Verso extends Component {
                         <Text style={styles.subtitle}>CNPJ 08.451.523/0001-006</Text>
                         <Text style={styles.subtitle}>contato.aspolpb@gmail.com - (83) 3506-3429</Text>
                         <View style={styles.footer}>
-                            <TouchableOpacity>
-                                <Icon name="facebook" size={25} color="#fff"  style={styles.icon} />
-                            </TouchableOpacity>
-
-                            <TouchableOpacity>
-                                <Icon name="instagram" size={25} color="#fff" style={styles.icon} />
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <Text style={styles.subtitle}>aspolpb.com.br</Text>
-                            </TouchableOpacity>
+                            <Icon name="facebook" size={25} color="#fff" style={styles.icon} />
+                            <Icon name="instagram" size={25} color="#fff" style={styles.icon} />
+                            <Text style={styles.subtitle}>aspolpb.com.br</Text>
                         </View>
                     </View>
 

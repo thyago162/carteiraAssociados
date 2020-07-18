@@ -6,7 +6,7 @@ import {
     Text,
     TouchableOpacity,
     ImageBackground,
-    StyleSheet,
+    StyleSheet
 } from 'react-native';
 import axios from 'axios';
 import { connect } from 'react-redux'
@@ -64,7 +64,7 @@ import { login } from '../store/actions/user';
                     </View>
 
                     <View>
-                        <TouchableOpacity>
+                        <TouchableOpacity disabled={this.props.isLoading}>
                             <Text style={styles.link}>Esqueceu a senha?</Text>
                         </TouchableOpacity>
                     </View>

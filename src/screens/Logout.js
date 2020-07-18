@@ -9,7 +9,8 @@ class Logout extends Component {
         this.state = {}
     }
 
-    componentWillMount() {
+
+    UNSAFE_componentWillMount() {
         this.logout()
     }
 
@@ -21,6 +22,8 @@ class Logout extends Component {
         return null
     }
 }
+
+const abort = new AbortController()
 
 const mapDispatchToProps = dispatch => {
     return {
