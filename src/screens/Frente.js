@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ImageBackground, Image } from 'react-native';
+
 import { connect } from 'react-redux';
 import { getMembership } from '../store/actions/membership';
 import Orientation from 'react-native-orientation-locker';

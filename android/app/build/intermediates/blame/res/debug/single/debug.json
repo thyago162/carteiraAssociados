@@ -41,7 +41,7 @@
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/layout_redbox_item_title.xml.flat",
-        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/adfb40304a066ffcb5a9eaa2fe0add0d/jetified-react-native-0.62.2/res/layout/redbox_item_title.xml"
+        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/9db4d215f762b8e54b8035804e33d79b/jetified-react-native-0.62.2/res/layout/redbox_item_title.xml"
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/color_mtrl_card_view_foreground.xml.flat",
@@ -153,7 +153,7 @@
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/anim_catalyst_slide_down.xml.flat",
-        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/adfb40304a066ffcb5a9eaa2fe0add0d/jetified-react-native-0.62.2/res/anim/catalyst_slide_down.xml"
+        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/9db4d215f762b8e54b8035804e33d79b/jetified-react-native-0.62.2/res/anim/catalyst_slide_down.xml"
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -245,7 +245,7 @@
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/layout_redbox_view.xml.flat",
-        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/adfb40304a066ffcb5a9eaa2fe0add0d/jetified-react-native-0.62.2/res/layout/redbox_view.xml"
+        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/9db4d215f762b8e54b8035804e33d79b/jetified-react-native-0.62.2/res/layout/redbox_view.xml"
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/layout_design_navigation_item_header.xml.flat",
@@ -349,7 +349,7 @@
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/anim_catalyst_slide_up.xml.flat",
-        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/adfb40304a066ffcb5a9eaa2fe0add0d/jetified-react-native-0.62.2/res/anim/catalyst_slide_up.xml"
+        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/9db4d215f762b8e54b8035804e33d79b/jetified-react-native-0.62.2/res/anim/catalyst_slide_up.xml"
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -369,7 +369,7 @@
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/drawable_redbox_top_border_background.xml.flat",
-        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/adfb40304a066ffcb5a9eaa2fe0add0d/jetified-react-native-0.62.2/res/drawable/redbox_top_border_background.xml"
+        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/9db4d215f762b8e54b8035804e33d79b/jetified-react-native-0.62.2/res/drawable/redbox_top_border_background.xml"
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
@@ -873,7 +873,7 @@
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/layout_dev_loading_view.xml.flat",
-        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/adfb40304a066ffcb5a9eaa2fe0add0d/jetified-react-native-0.62.2/res/layout/dev_loading_view.xml"
+        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/9db4d215f762b8e54b8035804e33d79b/jetified-react-native-0.62.2/res/layout/dev_loading_view.xml"
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/layout_abc_cascading_menu_item_layout.xml.flat",
@@ -933,7 +933,7 @@
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/xml_rn_dev_preferences.xml.flat",
-        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/adfb40304a066ffcb5a9eaa2fe0add0d/jetified-react-native-0.62.2/res/xml/rn_dev_preferences.xml"
+        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/9db4d215f762b8e54b8035804e33d79b/jetified-react-native-0.62.2/res/xml/rn_dev_preferences.xml"
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/anim_btn_radio_to_off_mtrl_dot_group_animation.xml.flat",
@@ -945,7 +945,7 @@
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/layout_fps_view.xml.flat",
-        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/adfb40304a066ffcb5a9eaa2fe0add0d/jetified-react-native-0.62.2/res/layout/fps_view.xml"
+        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/9db4d215f762b8e54b8035804e33d79b/jetified-react-native-0.62.2/res/layout/fps_view.xml"
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/layout_design_layout_snackbar.xml.flat",
@@ -1033,7 +1033,7 @@
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/anim_catalyst_push_up_out.xml.flat",
-        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/adfb40304a066ffcb5a9eaa2fe0add0d/jetified-react-native-0.62.2/res/anim/catalyst_push_up_out.xml"
+        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/9db4d215f762b8e54b8035804e33d79b/jetified-react-native-0.62.2/res/anim/catalyst_push_up_out.xml"
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_design_ic_visibility_off.xml.flat",
@@ -1081,7 +1081,7 @@
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/anim_catalyst_fade_in.xml.flat",
-        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/adfb40304a066ffcb5a9eaa2fe0add0d/jetified-react-native-0.62.2/res/anim/catalyst_fade_in.xml"
+        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/9db4d215f762b8e54b8035804e33d79b/jetified-react-native-0.62.2/res/anim/catalyst_fade_in.xml"
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
@@ -1357,7 +1357,7 @@
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/layout_redbox_item_frame.xml.flat",
-        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/adfb40304a066ffcb5a9eaa2fe0add0d/jetified-react-native-0.62.2/res/layout/redbox_item_frame.xml"
+        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/9db4d215f762b8e54b8035804e33d79b/jetified-react-native-0.62.2/res/layout/redbox_item_frame.xml"
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/drawable_abc_spinner_textfield_background_material.xml.flat",
@@ -1545,7 +1545,7 @@
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/anim_catalyst_push_up_in.xml.flat",
-        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/adfb40304a066ffcb5a9eaa2fe0add0d/jetified-react-native-0.62.2/res/anim/catalyst_push_up_in.xml"
+        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/9db4d215f762b8e54b8035804e33d79b/jetified-react-native-0.62.2/res/anim/catalyst_push_up_in.xml"
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
@@ -2477,7 +2477,7 @@
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/anim_catalyst_fade_out.xml.flat",
-        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/adfb40304a066ffcb5a9eaa2fe0add0d/jetified-react-native-0.62.2/res/anim/catalyst_fade_out.xml"
+        "source": "/home/thyago/.gradle/caches/transforms-2/files-2.1/9db4d215f762b8e54b8035804e33d79b/jetified-react-native-0.62.2/res/anim/catalyst_fade_out.xml"
     },
     {
         "merged": "/home/thyago/workspace/Aspol/carteiraAssociados/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",

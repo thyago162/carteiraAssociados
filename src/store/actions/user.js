@@ -5,9 +5,10 @@ import {
     USER_LOADED, 
     MEMBERSHIP_DATA} 
 from './actionTypes'
+import { setMessage } from './message'
 import axios from 'axios'
 
-const baseURL = 'http://192.168.122.219/api'
+const baseURL = 'https://aspolpb.com.br/api'
 
 export const login = user => {
     return dispatch => {
@@ -42,25 +43,40 @@ export const login = user => {
                                     dispatch(userLoaded())
                                 }
                                 else {
-                                    alert(res.data.result.error)
+                                    dispatch(setMessage({
+                                        title: 'Erro!',
+                                        text: 'Não é possível realizar login. O e-mail não pertence a nenhum associado'
+                                    }))
                                 }
                             }
                             else {
-                                alert(res.data.result.error)
+                                dispatch(setMessage({
+                                    title: 'Erro!',
+                                    text: 'Falha na comunicação com o servidor, tente novamente mais tarde'
+                                }))
                             }
                         })
                        
                     }else {
-                        alert(res.data.response.error)
+                        dispatch(setMessage({
+                            title: 'Erro!',
+                            text: 'Email ou senha inválidos'
+                        }))
                     }
                    
                 }else {
-                    alert(res.data.response.error)
+                    dispatch(setMessage({
+                        title: 'Erro!',
+                        text: 'Falha na comunicação com o servidor, tente novamente mais tarde'
+                    }))
                 }
                 
             })
             .catch(err => {
-                alert(err)
+                dispatch(setMessage({
+                    title: 'Erro!',
+                    text: err
+                }))
             })
 
 

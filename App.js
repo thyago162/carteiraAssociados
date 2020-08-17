@@ -1,69 +1,37 @@
 import React, { Component } from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { Provider } from 'react-redux';
+import Navigator from './src/components/Navigator'
+import { connect } from 'react-redux'
+import { setMessage } from './src/store/actions/message'
+import { Alert } from 'react-native';
 
-import storeConfig from './src/store/storeConfig'
-import Login from './src/screens/Login';
-import Frente from './src/screens/Frente';
-import Verso from './src/screens/Verso';
-import Sair from './src/screens/Logout';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+class App extends Component {
 
-const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
-
-const store = storeConfig()
-
-
-export default class App extends Component {
+  componentDidUpdate = () => {
+    if (this.props.text && this.props.text.trim()) {
+      Alert.alert(this.props.title || 'Mensagem', this.props.text)
+      this.props.clearMessage()
+    }
+  }
 
   render() {
     return (
-      <Provider store={store}>
-        <NavigationContainer>
-          <Stack.Navigator initialRouteName="Login" headerMode="none">
-            <Stack.Screen name="Home">
-              {() => (
-                <Tab.Navigator initialRouteName="Frente"
-
-                  screenOptions={({ route }) => ({
-                    tabBarIcon: ({ focused, color, size }) => {
-
-                      let iconName;
-                      if (route.name === 'Frente') {
-                        iconName = focused ? "card-account-details" : "card-account-details-outline"
-                      } else if (route.name === 'Verso') {
-                        iconName = focused ? "card-bulleted" : "card-bulleted-outline"
-                      } else if (route.name === 'Sair') {
-                        iconName = focused ? "logout" : "logout-variant"
-                      }
-
-                      return <Icon name={iconName} size={size} color={color} />
-                    }
-
-                  })}
-
-                  tabBarOptions={{
-                    activeTintColor: 'tomato',
-                    inactiveTintColor: 'gray'
-                  }}
-                >
-                  <Tab.Screen name="Frente" component={Frente} />
-                  <Tab.Screen name="Verso" component={Verso} />
-                  <Tab.Screen name="Sair" component={Sair} />
-                </Tab.Navigator>
-
-              )}
-
-            </Stack.Screen>
-            <Stack.Screen name="Login" component={Login} />
-          </Stack.Navigator>
-
-        </NavigationContainer>
-      </Provider>
+      <Navigator />
     )
 
   }
 }
+
+const mapStateToProps = ({ message }) => {
+  return {
+    title: message.title,
+    text: message.text
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    clearMessage: () => dispatch(setMessage({ title: '', text: '' }))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

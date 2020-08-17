@@ -7,10 +7,12 @@ import {
     TouchableOpacity,
     ImageBackground,
     StyleSheet,
+    Linking
 } from 'react-native';
-import axios from 'axios';
 import { connect } from 'react-redux'
 import { login } from '../store/actions/user';
+
+const resetPassLink = 'https://www.aspolpb.com.br'
 
  class Login extends Component {
 
@@ -33,6 +35,16 @@ import { login } from '../store/actions/user';
 
     login = () => {
         this.props.onLogin({ ...this.state })
+    }
+
+    resetPassword = () => {
+       Linking.canOpenURL(resetPassLink).then(supported => {
+           if (supported) {
+               Linking.openURL(resetPassLink)
+           }else {
+               console.log('Nao abre')
+           }
+       })
     }
 
     render() {
@@ -64,7 +76,7 @@ import { login } from '../store/actions/user';
                     </View>
 
                     <View>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={this.resetPassword}>
                             <Text style={styles.link}>Esqueceu a senha?</Text>
                         </TouchableOpacity>
                     </View>
