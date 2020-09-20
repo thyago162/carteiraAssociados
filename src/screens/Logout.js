@@ -1,16 +1,20 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../store/actions/user'
+import Orientation from 'react-native-orientation-locker';
 
 class Logout extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {}
+    
+    UNSAFE_componentWillMount() {
+        Orientation.unlockAllOrientations();
+        Orientation.removeOrientationListener(this._onOrientationDidChange);
+        this.logout()
     }
 
-    componentWillMount() {
-        this.logout()
+    _onOrientationDidChange = (orientation) => {
+        if (orientation == 'LANDSCAPE') {
+            Orientation.lockToLandscape();
+        }
     }
 
     logout = () => {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ImageBackground, Dimensions, TouchableOpacity } from 'react-native';
+import {createStyles, maxHeight} from 'react-native-media-queries';
 import Orientation from 'react-native-orientation-locker';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
@@ -66,7 +67,7 @@ export default class Verso extends Component {
     }
 }
 
-const styles = StyleSheet.create({
+const base = {
     container: {
         flex: 1
     },
@@ -119,5 +120,19 @@ const styles = StyleSheet.create({
     icon: {
         padding: 2
     }
-})
+}
+
+const styles = createStyles(
+    base,
+
+    maxHeight(600, {
+        title: {
+            fontSize: 18
+        },
+
+        subtitle: {
+            fontSize: 16
+        }
+    } )
+)
 

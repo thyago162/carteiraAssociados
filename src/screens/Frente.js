@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ImageBackground, Image } from 'react-native';
-
+import { View, Text, ImageBackground, Image, Dimensions } from 'react-native';
+import {createStyles, maxHeight} from 'react-native-media-queries';
 import { connect } from 'react-redux';
 import { getMembership } from '../store/actions/membership';
 import Orientation from 'react-native-orientation-locker';
@@ -124,7 +124,7 @@ const mapDispatchToProps = dispatch => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(Frente)
 
-const styles = StyleSheet.create({
+const base = {
     container: {
         flex: 1
     },
@@ -165,5 +165,17 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
     }
+}
+const styles = new createStyles (
+    base,
 
-})
+    maxHeight(600, {
+        title: {
+            fontSize: 16
+        },
+
+        subtitle: {
+            fontSize: 26
+        }
+    })
+)

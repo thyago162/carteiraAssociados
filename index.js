@@ -12,6 +12,6 @@ const Redux = () => (
         <App />
     </Provider >
 )
-    
+console.disableYellowBox = true;
 
 AppRegistry.registerComponent(appName, () => Redux);
