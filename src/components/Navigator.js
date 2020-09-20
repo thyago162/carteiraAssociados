@@ -46,7 +46,6 @@ export default class Navigator extends Component {
                                 <Tab.Screen name="Verso" component={Verso} />
                                 <Tab.Screen name="Sair" component={Sair} />
                             </Tab.Navigator>
-
                         )}
 
                     </Stack.Screen>

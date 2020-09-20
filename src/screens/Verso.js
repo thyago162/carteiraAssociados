@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ImageBackground, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import {createStyles, maxHeight} from 'react-native-media-queries';
 import Orientation from 'react-native-orientation-locker';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
-const windowHeight = Dimensions.get('window').height
 
 export default class Verso extends Component {
     constructor(props) {
@@ -41,27 +40,24 @@ export default class Verso extends Component {
 
                     <View style={styles.body}>
                         <Text style={styles.title}>ASSOCIAÇÃO DOS POLICIAIS CÍVIS DE CARREIRA DA PARAÍBA</Text>
-                        <Text style={styles.subtitle}>CNPJ 08.451.523/0001-006</Text>
-                        <Text style={styles.subtitle}>contato.aspolpb@gmail.com - (83) 3506-3429</Text>
-                        <View style={styles.footer}>
-                            <TouchableOpacity>
-                                <Icon name="facebook" size={25} color="#fff"  style={styles.icon} />
-                            </TouchableOpacity>
+                        <View style={styles.subtitles}>
+                            <Text style={styles.subtitle}>CNPJ 08.451.523/0001-006</Text>
+                            <Text style={styles.subtitle}>contato.aspolpb@gmail.com - (83) 3506-3429</Text>
+                            <View style={styles.footer}>
+                                <TouchableOpacity>
+                                    <Icon name="facebook"  style={styles.icon} />
+                                </TouchableOpacity>
 
-                            <TouchableOpacity>
-                                <Icon name="instagram" size={25} color="#fff" style={styles.icon} />
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <Text style={styles.subtitle}>aspolpb.com.br</Text>
-                            </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <Icon name="instagram" style={styles.icon} />
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <Text style={styles.subtitle}>aspolpb.com.br</Text>
+                                </TouchableOpacity>
+                            </View>
                         </View>
                     </View>
-
-
-
                 </ImageBackground>
-
-
             </View>
         )
     }
@@ -90,8 +86,7 @@ const base = {
         flexDirection: 'column',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        marginBottom: 40
-
+        marginBottom: 80
     },
 
     footer: {
@@ -102,37 +97,158 @@ const base = {
 
     text: {
         color: '#fff',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: 36,
+        marginTop: 25
     },
 
     title: {
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 22
+        fontSize: 40
     },
 
     subtitle: {
         color: '#ffffff',
-        fontSize: 18,
+        fontSize: 36,
         fontWeight: 'bold'
     },
 
+    subtitles: {
+        marginTop: 70,
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+
     icon: {
-        padding: 2
+        padding: 2,
+        fontSize: 50,
+        color: '#ffffff'
     }
 }
 
 const styles = createStyles(
     base,
 
-    maxHeight(600, {
-        title: {
-            fontSize: 18
+    maxHeight(980, {
+        text: {
+            color: '#fff',
+            fontWeight: 'bold',
+            fontSize: 24,
+            marginTop: 10,
         },
 
+        body: {
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            marginBottom: 60
+        },
+    
+    
+        title: {
+            color: '#fff',
+            fontWeight: 'bold',
+            fontSize: 32
+        },
+    
         subtitle: {
-            fontSize: 16
+            color: '#ffffff',
+            fontSize: 24,
+            fontWeight: 'bold'
+        },
+    
+        subtitles: {
+            marginTop: 30,
+            flexDirection: 'column',
+            alignItems: 'center',
+        },
+    
+        icon: {
+            padding: 2,
+            fontSize: 30,
+            color: '#ffffff'
         }
-    } )
+    }),
+
+    maxHeight(760, {
+        text: {
+            color: '#fff',
+            fontWeight: 'bold',
+            fontSize: 18,
+            marginTop: 2
+        },
+
+        body: {
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            marginTop: 80
+        },
+    
+        title: {
+            color: '#fff',
+            fontWeight: 'bold',
+            fontSize: 22
+        },
+    
+        subtitle: {
+            color: '#ffffff',
+            fontSize: 20,
+            fontWeight: 'bold'
+        },
+    
+        subtitles: {
+            marginTop: 30,
+            flexDirection: 'column',
+            alignItems: 'center',
+        },
+    
+        icon: {
+            padding: 2,
+            fontSize: 25,
+            color: '#ffffff'
+        }
+    }),
+
+    maxHeight(600, {
+        text: {
+            color: '#fff',
+            fontWeight: 'bold',
+            fontSize: 18,
+            marginTop: 2,
+        },
+
+        body: {
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            marginTop: 80
+        },
+    
+        title: {
+            color: '#fff',
+            fontWeight: 'bold',
+            fontSize: 18
+        },
+    
+        subtitle: {
+            color: '#ffffff',
+            fontSize: 16,
+            fontWeight: 'bold'
+        },
+    
+        subtitles: {
+            marginTop: 30,
+            flexDirection: 'column',
+            alignItems: 'center',
+        },
+    
+        icon: {
+            padding: 2,
+            fontSize: 20,
+            color: '#ffffff'
+        }
+    })
 )
 

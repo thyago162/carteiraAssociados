@@ -6,11 +6,11 @@ import {
     Text,
     TouchableOpacity,
     ImageBackground,
-    StyleSheet,
     Linking
 } from 'react-native';
 import { connect } from 'react-redux'
 import { login } from '../store/actions/user';
+import {createStyles, maxHeight} from 'react-native-media-queries';
 
 const resetPassLink = 'https://www.aspolpb.com.br'
 
@@ -24,7 +24,6 @@ const resetPassLink = 'https://www.aspolpb.com.br'
             password: '',
             token: 'token'
         }
-
     }
 
     componentDidUpdate = prevProps => {
@@ -81,7 +80,6 @@ const resetPassLink = 'https://www.aspolpb.com.br'
                         </TouchableOpacity>
                     </View>
 
-
                 </ImageBackground>
             </View>
         )
@@ -102,7 +100,7 @@ const mapDispatchToProps = dispatch => {
   
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
 
-const styles = StyleSheet.create({
+const base = {
     container: {
         flex: 1
     },
@@ -117,8 +115,8 @@ const styles = StyleSheet.create({
     },
 
     logo: {
-        width: 250,
-        height: 100
+        width: 500,
+        height: 200
     },
 
     form: {
@@ -126,14 +124,16 @@ const styles = StyleSheet.create({
     },
 
     input: {
-        borderBottomWidth: 1,
+        borderBottomWidth: 2,
         borderColor: '#fff',
-        padding: 10,
-        color: "#fff"
+        padding: 5,
+        color: "#fff",
+        marginTop: 20,
+        fontSize: 24
     },
 
     button: {
-        height: 40,
+        height: 50,
         marginTop: 15,
         backgroundColor: '#ffffff',
         borderRadius: 5
@@ -145,10 +145,126 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: 'rgb(189,22,34)',
         fontWeight: 'bold',
-        fontSize: 20
+        fontSize: 26
     },
 
     link: {
-        color: '#ffffff'
+        color: '#ffffff',
+        fontSize: 26
     }
-})
+}
+
+const styles = createStyles(
+    base,
+    maxHeight(980, {
+        logo: {
+            width: 400,
+            height: 160
+        },
+
+        input: {
+            borderBottomWidth: 2,
+            borderColor: '#fff',
+            padding: 5,
+            color: "#fff",
+            marginTop: 20,
+            fontSize: 22
+        },
+    
+        button: {
+            height: 50,
+            marginTop: 15,
+            backgroundColor: '#ffffff',
+            borderRadius: 5
+    
+        },
+    
+        buttonText: {
+            padding: 5,
+            textAlign: 'center',
+            color: 'rgb(189,22,34)',
+            fontWeight: 'bold',
+            fontSize: 24
+        },
+
+        link: {
+            color: '#ffffff',
+            fontSize: 24
+        }
+    }),
+
+    maxHeight(760, {
+        logo: {
+            width: 290,
+            height: 100
+        },
+
+        input: {
+            borderBottomWidth: 1,
+            borderColor: '#fff',
+            padding: 5,
+            color: "#fff",
+            marginTop: 15,
+            fontSize: 18
+        },
+    
+        button: {
+            height: 40,
+            marginTop: 15,
+            backgroundColor: '#ffffff',
+            borderRadius: 5
+    
+        },
+    
+        buttonText: {
+            padding: 5,
+            textAlign: 'center',
+            color: 'rgb(189,22,34)',
+            fontWeight: 'bold',
+            fontSize: 22
+        },
+
+        link: {
+            color: '#ffffff',
+            fontSize: 18
+        }
+    }),
+
+
+    maxHeight(600, {
+        logo: {
+            width: 250,
+            height: 100
+        },
+
+        input: {
+            borderBottomWidth: 1,
+            borderColor: '#fff',
+            padding: 5,
+            color: "#fff",
+            marginTop: 15,
+            fontSize: 18
+        },
+    
+        button: {
+            height: 40,
+            marginTop: 15,
+            backgroundColor: '#ffffff',
+            borderRadius: 5
+    
+        },
+    
+        buttonText: {
+            padding: 5,
+            textAlign: 'center',
+            color: 'rgb(189,22,34)',
+            fontWeight: 'bold',
+            fontSize: 22
+        },
+
+        link: {
+            color: '#ffffff',
+            fontSize: 18
+        }
+    })   
+)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ImageBackground, Image, Dimensions } from 'react-native';
+import { View, Text, ImageBackground, Image } from 'react-native';
 import {createStyles, maxHeight} from 'react-native-media-queries';
 import { connect } from 'react-redux';
 import { getMembership } from '../store/actions/membership';
@@ -49,11 +49,8 @@ class Frente extends Component {
                      cpf[index] += '-'
                  }
             }
-
             this.setState({cpf: cpf.join('')})
-
         }
-
     }
 
     normalDateMask = param => {
@@ -70,7 +67,6 @@ class Frente extends Component {
 
             this.setState({filiacao: date})
         }
-
     }
 
     render() {
@@ -98,7 +94,6 @@ class Frente extends Component {
                             <Text style={styles.subtitle}>{this.state.nascimento}</Text>
                         </View>
                     </View>
-
                 </ImageBackground>
             </View>
         )
@@ -137,9 +132,9 @@ const base = {
     },
 
     image: {
-        width: 250,
-        height: 95,
-        marginTop: 10,
+        width: 460,
+        height: 155,
+        marginTop: 30,
         marginLeft: 20
     },
 
@@ -149,15 +144,15 @@ const base = {
     },
 
     title: {
-        fontSize: 20,
+        fontSize: 40,
         color: '#ffffff',
-        marginLeft: 20
+        marginLeft: 10
     },
 
     subtitle: {
         color: '#ffffff',
-        fontSize: 32,
-        marginLeft: 20
+        fontSize: 54,
+        marginLeft: 10
     },
 
     other: {
@@ -169,13 +164,80 @@ const base = {
 const styles = new createStyles (
     base,
 
-    maxHeight(600, {
-        title: {
-            fontSize: 16
+    maxHeight(980, {
+        image: {
+            width: 330,
+            height: 110,
+            marginTop: 30,
+            marginLeft: 20
         },
-
+    
+        name: {
+            width: '100%',
+            marginLeft: 20
+        },
+    
+        title: {
+            fontSize: 30,
+            color: '#ffffff',
+            marginLeft: 10
+        },
+    
         subtitle: {
-            fontSize: 26
-        }
+            color: '#ffffff',
+            fontSize: 44,
+            marginLeft: 10
+        },
+    }),
+
+    maxHeight(760, {
+        image: {
+            width: 240,
+            height: 100,
+            marginTop: 20,
+            marginLeft: 10
+        },
+    
+        name: {
+            width: '100%',
+            marginLeft: 29
+        },
+    
+        title: {
+            fontSize: 20,
+            color: '#ffffff'
+        },
+    
+        subtitle: {
+            color: '#ffffff',
+            fontSize: 26,
+            marginLeft: 10
+        },
+    }),
+
+    maxHeight(600, {
+        image: {
+            width: 200,
+            height: 100,
+            marginTop: 20,
+            marginLeft: 10
+        },
+    
+        name: {
+            width: '100%',
+            marginLeft: 10
+        },
+    
+        title: {
+            fontSize: 18,
+            color: '#ffffff',
+            marginLeft: 10
+        },
+    
+        subtitle: {
+            color: '#ffffff',
+            fontSize: 24,
+            marginLeft: 10
+        },
     })
 )
